@@ -29,14 +29,6 @@ public class Application {
 		user.setLastUpdatedDate(new Date());
 		
 		session.save(user);
-		session.getTransaction().commit();
-
-		
-		session.beginTransaction();
-		User dbUser = (User) session.get(User.class, user.getUserId());
-		dbUser.setFirstName("smuddu");
-		session.update(dbUser);
-		session.getTransaction().commit();
 		
 		session.close();	
 		

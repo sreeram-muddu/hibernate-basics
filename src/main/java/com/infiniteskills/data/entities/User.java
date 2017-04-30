@@ -8,6 +8,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 @Table(name = "FINANCES_USER")
@@ -40,6 +42,7 @@ public class User {
 	private String createdBy;
 	
 	@Column(name = "CREATED_DATE" , updatable = false)
+	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date createDate;
 
 	public Date getCreateDate() {
