@@ -36,10 +36,10 @@ public class User {
 	@Column(name = "LAST_UPDATED_BY")
 	private String lastUpdatedBy;
 	
-	@Column(name = "CREATE_BY")
+	@Column(name = "CREATED_BY")
 	private String createdBy;
 	
-	@Column(name = "CREATE_DATE")
+	@Column(name = "CREATED_DATE")
 	private Date createDate;
 
 	public Date getCreateDate() {
