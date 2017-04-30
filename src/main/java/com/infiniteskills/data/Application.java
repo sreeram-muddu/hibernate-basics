@@ -30,6 +30,9 @@ public class Application {
 		
 		session.save(user);
 		
+		session.refresh(user);
+		
+		System.out.println("The age is "+user.getAge());
 		session.close();	
 		
 		

@@ -10,6 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import org.hibernate.annotations.*;
 
 @Entity
 @Table(name = "FINANCES_USER")
@@ -44,6 +45,17 @@ public class User {
 	@Column(name = "CREATED_DATE" , updatable = false)
 	@Temporal(value = TemporalType.TIMESTAMP)
 	private Date createDate;
+
+	@Formula("lower(datediff(curdate(),birth_date)/365)")
+	private int age;
+	
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
 
 	public Date getCreateDate() {
 		return createDate;
